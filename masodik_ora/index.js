@@ -82,11 +82,25 @@ function inputHandler(){
     })
 }
 
+function filter_list(){
+    const filter = document.getElementById("todo-search").value.trim().toLowerCase();
+    const list_of_todos = todoContainer.children;
+    for(let idx = 1; idx < list_of_todos.length; idx ++){
+        if(list_of_todos[idx].textContent.slice(0, -1).toLowerCase().indexOf(filter) === -1){
+            list_of_todos[idx].classList.add("hidden");
+            continue;
+        }   
+        list_of_todos[idx].classList.remove("hidden");
+    }
+}
+
 document.getElementById("todo-input").addEventListener("keypress", function(){
     if(event.keyCode == 13){
         inputHandler();
     }
 });
+
+document.getElementById("todo-search").addEventListener("keyup", filter_list);
 
 const savedJson = localStorage.getItem("todo-state");
 

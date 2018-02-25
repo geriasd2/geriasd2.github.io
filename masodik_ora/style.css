@@ -4,19 +4,35 @@
 }
 
 #input-row{
-    width: fit-content;
-    padding: 1px;
+    padding: 2px;
     cursor: auto !important;
+}
+/*
+.input-in-list{
+    border: 0;
+    padding-left: 20px;
+}
+*/
 
+#todo-search{
+    border: 0;
+    padding-left: 20px !important;
 }
 
 #todo-input{
-    border: 0;
-    padding-left: 20px;
+    padding-left: 20px !important;
+    border-left: 0px !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.125) !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
 }
 
 li{
     cursor: pointer;
+}
+
+li:hover{
+    opacity: 0.7;
 }
 
 button{
@@ -26,4 +42,8 @@ button{
 
 #list-container{
     padding-top: 25px;
+}
+
+.hidden{
+    display: none !important;
 }
